@@ -55,6 +55,7 @@
 #include "BandwidthController.h"
 #include "NatController.h"  /* For LOCAL_TETHER_COUNTERS_CHAIN */
 #include "ResponseCode.h"
+#include "QtiConnectivityAdapter.h"
 
 /* Alphabetical */
 #define ALERT_IPT_TEMPLATE "%s %s -m quota2 ! --quota %" PRId64" --name %s\n"
@@ -1109,6 +1110,7 @@ char *BandwidthController::TetherStats::getStatsLine(void) const {
 int BandwidthController::getTetherStats(SocketClient *cli, TetherStats& filter,
                                         std::string &extraProcessingInfo) {
     int res = 0;
+    getV6TetherStats(cli, stats.intIface.c_str(), stats.extIface.c_str(), extraProcessingInfo);
 
     TetherStatsList statsList;
 

@@ -104,6 +104,7 @@ LOCAL_SRC_FILES := \
         NetworkController.cpp \
         PhysicalNetwork.cpp \
         PppController.cpp \
+        QtiConnectivityAdapter.cpp \
         ResolverController.cpp \
         RouteController.cpp \
         SockDiag.cpp \
@@ -153,6 +154,7 @@ LOCAL_C_INCLUDES := \
         system/netd/server/binder \
         system/netd/tests \
         system/core/logwrapper/include \
+        system/netd/include
 
 LOCAL_SRC_FILES := \
         Controllers.cpp \
